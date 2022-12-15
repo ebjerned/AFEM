@@ -14,11 +14,11 @@ delta1 = 1
 delta2 = 1
 delta3 = 1
 alpha = 0.4
-beta = 0.8
+beta = 1
 gamma = 0.8
 zeta = 2
 L_0 = 0.4
-l = 0.6
+l = 0.4
 m = 0.12
 
 class InitialConditions(UserExpression):
@@ -110,21 +110,21 @@ plt.ylabel("Population")
 plt.savefig("results_sweden/p_tot.png")	
 
 plt.clf()
-plt.plot(pv_tot, pw_tot, lineWidth=0.2)
+plt.plot(pv_tot, pw_tot, linewidth=0.2)
 plt.title("Phase diagram preys and predators")
 plt.xlabel("Preys")
 plt.ylabel("Predators")
 plt.savefig("results_sweden/vwphase.png")
 
 plt.clf()
-plt.plot(pv_tot, pu_tot, lineWidth=0.2)
+plt.plot(pv_tot, pu_tot, linewidth=0.2)
 plt.title("Phase diagram preys and mutualists")
 plt.xlabel("Preys")
 plt.ylabel("Mutualists")
 plt.savefig("results_sweden/vuphase.png")
 
 plt.clf()
-plt.plot(pw_tot, pu_tot, lineWidth=0.2)
+plt.plot(pw_tot, pu_tot, linewidth=0.2)
 plt.title("Phase diagram predators and mutualists")
 plt.xlabel("Predators")
 plt.ylabel("Mutualists")

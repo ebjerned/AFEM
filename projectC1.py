@@ -14,11 +14,11 @@ delta1 = 1
 delta2 = 1
 delta3 = 1
 alpha = 0.4
-beta = 0.8
+beta = 1
 gamma = 0.8
 zeta = 2
 L_0 = 0.4
-l = 0.6
+l = 0.4
 m =0.12
 
 class InitialConditions(UserExpression):
@@ -102,14 +102,14 @@ plt.plot(pw_tot)
 plt.savefig("results_C1/p_tot.png")	
 
 plt.clf()
-plt.plot(pv_tot, pw_tot, lineWidth=0.2)
+plt.plot(pv_tot, pw_tot, linewidth=0.2)
 plt.title("Phase diagram preys and predators")
 plt.xlabel("Preys")
 plt.ylabel("Predators")
 plt.savefig("results_C1/vwphase.png")
 
 plt.clf()
-plt.plot3(pu_tot, pv_tot, pw_tot)
+#plt.plot3(pu_tot, pv_tot, pw_tot) Should maybe be done in Matlab?
 plt.title("Phase diagram for all populations")
 plt.xlabel("Mutualist")
 plt.ylabel("Preys")

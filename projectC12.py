@@ -14,16 +14,16 @@ delta1 = 1
 delta2 = 1
 delta3 = 1
 alpha = 0.4
-beta = 0.8
+beta = 1
 gamma = 0.8
 zeta = 2
 L_0 = 0.4
-l = 0.6
-m =0.12
+l = 0.4
+m = 0.12
 
 class InitialConditions(UserExpression):
 	def eval(self,values,x):
-		values[0] = 0.1 *( 4/15 - 2*10**-7*(x[0]-0.1*x[1]-350)*(x[0]-0.1*x[1]-67) )
+		values[0] = 0.01 *( 4/15 - 2*10**-7*(x[0]-0.1*x[1]-350)*(x[0]-0.1*x[1]-67) )
 		values[1] = 4/15 - 2*10**-7*(x[0]-0.1*x[1]-350)*(x[0]-0.1*x[1]-67)
 		values[2] = 22/25 - 3*10**-5*(x[0]-450)-1.2*10**-4*(x[1]-15)
 	
@@ -105,7 +105,7 @@ plt.ylabel("Population")
 plt.savefig("results_C12/p_tot.png")	
 
 plt.clf()
-plt.plot(pv_tot, pw_tot, lineWidth=0.2)
+plt.plot(pv_tot, pw_tot, linewidth=0.2)
 plt.title("Phase diagram preys and predators")
 plt.xlabel("Preys")
 plt.ylabel("Predators")
