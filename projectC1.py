@@ -99,14 +99,14 @@ while t < T:
 plt.plot(pu_tot)
 plt.plot(pv_tot)
 plt.plot(pw_tot)
-plt.savefig("resultsC1/p_tot.png")	
+plt.savefig("results_C1/p_tot.png")	
 
 plt.clf()
 plt.plot(pv_tot, pw_tot, lineWidth=0.2)
 plt.title("Phase diagram preys and predators")
 plt.xlabel("Preys")
 plt.ylabel("Predators")
-plt.savefig("resultsC1/vwphase.png")
+plt.savefig("results_C1/vwphase.png")
 
 plt.clf()
 plt.plot3(pu_tot, pv_tot, pw_tot)
@@ -114,6 +114,6 @@ plt.title("Phase diagram for all populations")
 plt.xlabel("Mutualist")
 plt.ylabel("Preys")
 plt.zlabel("Predators")
-plt.savefig("resultsC1/uvwphase.png")
+plt.savefig("results_C1/uvwphase.png")
 
 

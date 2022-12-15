@@ -102,13 +102,13 @@ plt.plot(pw_tot)
 plt.title("Population over time")
 plt.xlabel("Time")
 plt.ylabel("Population")
-plt.savefig("resultsC12/p_tot.png")	
+plt.savefig("results_C12/p_tot.png")	
 
 plt.clf()
 plt.plot(pv_tot, pw_tot, lineWidth=0.2)
 plt.title("Phase diagram preys and predators")
 plt.xlabel("Preys")
 plt.ylabel("Predators")
-plt.savefig("resultsC12/vwphase.png")
+plt.savefig("results_C12/vwphase.png")
 
 
