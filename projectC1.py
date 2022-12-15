@@ -110,10 +110,10 @@ plt.savefig("results_C1/vwphase.png")
 
 plt.clf()
 #plt.plot3(pu_tot, pv_tot, pw_tot) Should maybe be done in Matlab?
-plt.title("Phase diagram for all populations")
-plt.xlabel("Mutualist")
-plt.ylabel("Preys")
-plt.zlabel("Predators")
-plt.savefig("results_C1/uvwphase.png")
+#plt.title("Phase diagram for all populations")
+#plt.xlabel("Mutualist")
+#plt.ylabel("Preys")
+#plt.zlabel("Predators")
+#plt.savefig("results_C1/uvwphase.png")
 
 
