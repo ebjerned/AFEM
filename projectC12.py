@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from dolfin import * 
 from fenics import *
+import numpy as np
 mesh = Mesh("meshes/circle.xml.gz")
 P1 = FiniteElement("Lagrange", mesh.ufl_cell(), 1)
 element = MixedElement([P1, P1, P1])
@@ -113,3 +114,7 @@ plt.ylabel("Predators")
 plt.savefig("results_C12/vwphase.png")
 
 
+np.savetxt('results_C12/C12mutualist.txt',pu_tot)
+np.savetxt('results_C12/C12prey.txt',pv_tot)
+np.savetxt('results_C12/C12pred.txt',pw_tot)
+np.savetxt('results_C12/C12time.txt',time)
