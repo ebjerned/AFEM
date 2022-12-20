@@ -24,8 +24,8 @@ m = 0.12
 class InitialConditions(UserExpression):
 	def eval(self,values,x):
 		values[0] = 0.01 *( 4/15 - 2*10**-7*(x[0]-0.1*x[1]-350)*(x[0]-0.1*x[1]-67) )
-		values[1] = 4/15 - 2*10**-7*(x[0]-0.1*x[1]-350)*(x[0]-0.1*x[1]-67)
-		values[2] = 22/25 - 3*10**-5*(x[0]-450)-1.2*10**-4*(x[1]-15)
+		values[1] = 4/15 - 2*pow(10,-7)*(x[0]-0.1*x[1]-350)*(x[0]-0.1*x[1]-67)
+		values[2] = 22/45 - 3*pow(10,-5)*(x[0]-450)-1.2*pow(10,-4)*(x[1]-15)
 	
 	def value_shape(self):
 		return (3,)
