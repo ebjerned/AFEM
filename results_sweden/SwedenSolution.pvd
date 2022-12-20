@@ -2,7 +2,6 @@
 <VTKFile type="Collection" version="0.1">
   <Collection>
     <DataSet timestep="0" part="0" file="SwedenSolution000000.vtu" />
-    <DataSet timestep="100" part="0" file="SwedenSolution000002.vtu" />
     <DataSet timestep="50" part="0" file="SwedenSolution000001.vtu" />
     <DataSet timestep="100" part="0" file="SwedenSolution000002.vtu" />
     <DataSet timestep="600" part="0" file="SwedenSolution000003.vtu" />

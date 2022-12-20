@@ -19,7 +19,7 @@ gamma = 0.8
 zeta = 2
 L_0 = 0.4
 l = 0.4
-m =0.12
+m = 0.12
 
 class InitialConditions(UserExpression):
 	def eval(self,values,x):
@@ -42,13 +42,13 @@ u0 = interpolate(indata,W)
 
 
 
-a1 = u[0]*q[0]*dx + dt*delta1*inner(grad(u[0]),grad(q[0]))*dx 
-a2 = u[1]*q[1]*dx + dt*delta2*inner(grad(u[1]),grad(q[1]))*dx
-a3 = u[2]*q[2]*dx + dt*delta3*inner(grad(u[2]),grad(q[2]))*dx
+a1 = (1 - dt*alpha) * u[0] * q[0] * dx + dt * delta1 * inner(grad(u[0]), grad(q[0])) * dx 
+a2 = (1 - dt*beta)  * u[1] * q[1] * dx + dt * delta2 * inner(grad(u[1]), grad(q[1])) * dx
+a3 = (1 + dt*gamma) * u[2] * q[2] * dx + dt * delta3 * inner(grad(u[2]), grad(q[2])) * dx
 
-L1 = dt * alpha * u0[0] * (1 - u0[0] / (L_0 + l * u0[1])) * q[0] * dx + u0[0] * q[0] * dx
-L2 = dt * ((beta * u0[1] * (1 - u0[1]) - u0[2] * u0[1] / (alpha + u0[1] + m * u0[0]))) * q[1] * dx + u0[1] * q[1] * dx
-L3 = dt * (-gamma * u0[2] + zeta * u0[1] * u0[2] / (alpha + u0[1] + m * u0[0])) * q[2] * dx + u0[2] * q[2] * dx
+L1 = - dt * alpha * u0[0] * u0[0] / (L_0 + l * u0[1]) * q[0] * dx + u0[0] * q[0] * dx
+L2 = dt * ((-beta * u0[1] * u0[1] - u0[2] * u0[1] / (alpha + u0[1] + m * u0[0]))) * q[1] * dx + u0[1] * q[1] * dx
+L3 = dt * ( zeta * u0[1] * u0[2] / (alpha + u0[1] + m * u0[0])) * q[2] * dx + u0[2] * q[2] * dx
 
 
 out_file = File("results_C1/Csolution.pvd")
@@ -75,9 +75,12 @@ time = []
 
 saving_times = [0, 100, 200, 300, 400, 500, 1000]
 
+
+
 while t < T:
 	time.append(t)
-	u0.assign(u)	
+	u_temp = 0.5*(u0 + u)
+	u0.assign(u_temp)	
 	solve(a==L,u)
 
 		
@@ -108,8 +111,8 @@ plt.xlabel("Preys")
 plt.ylabel("Predators")
 plt.savefig("results_C1/vwphase.png")
 
-plt.clf()
-#plt.plot3(pu_tot, pv_tot, pw_tot) Should maybe be done in Matlab?
+#plt.clf()
+#plt.plot3D(pu_tot, pv_tot, pw_tot) 
 #plt.title("Phase diagram for all populations")
 #plt.xlabel("Mutualist")
 #plt.ylabel("Preys")
