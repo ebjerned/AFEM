@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from dolfin import * 
 from fenics import *
 import numpy as np
-mesh = Mesh("meshes/circle.xml.gz")
+mesh = Mesh("meshes/circle_fine.xml.gz")
 P1 = FiniteElement("Lagrange", mesh.ufl_cell(), 1)
 element = MixedElement([P1, P1, P1])
 
