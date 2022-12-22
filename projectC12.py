@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from dolfin import * 
 from fenics import *
 import numpy as np
-mesh = Mesh("meshes/circle_fine.xml.gz")
+mesh = Mesh("meshes/circle.xml.gz")
 P1 = FiniteElement("Lagrange", mesh.ufl_cell(), 1)
 element = MixedElement([P1, P1, P1])
 
@@ -74,7 +74,7 @@ pw_tot = []
 
 time = []
 
-saving_times = [0, 100, 200, 300, 400, 500, 1000]
+saving_times = range(0, 1000, 50) #[0, 100, 200, 300, 400, 500, 1000]
 
 while t <= T:
 	time.append(t)
