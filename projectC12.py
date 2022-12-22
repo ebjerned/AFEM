@@ -9,7 +9,7 @@ element = MixedElement([P1, P1, P1])
 W = FunctionSpace(mesh, element)
 
 t = 0
-T = 1000
+T = 2000
 dt = 0.5
 delta1 = 1
 delta2 = 1
@@ -74,7 +74,7 @@ pw_tot = []
 
 time = []
 
-saving_times = range(0, 1000, 50) #[0, 100, 200, 300, 400, 500, 1000]
+saving_times = range(0, 2000, 50) #[0, 100, 200, 300, 400, 500, 1000]
 
 while t <= T:
 	time.append(t)
