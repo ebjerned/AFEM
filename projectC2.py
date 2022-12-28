@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import random
+import numpy as np
 from dolfin import * 
 from fenics import *
 mesh = Mesh("meshes/sweden.xml.gz")

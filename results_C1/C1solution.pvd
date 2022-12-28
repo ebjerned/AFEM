@@ -7,5 +7,6 @@
     <DataSet timestep="300" part="0" file="C1solution000003.vtu" />
     <DataSet timestep="400" part="0" file="C1solution000004.vtu" />
     <DataSet timestep="500" part="0" file="C1solution000005.vtu" />
+    <DataSet timestep="1000" part="0" file="C1solution000006.vtu" />
   </Collection>
 </VTKFile>
