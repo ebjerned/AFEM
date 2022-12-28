@@ -131,3 +131,9 @@ plt.ylabel("Mutualists")
 plt.savefig("results_sweden/wuphase.png")
 
 
+np.savetxt('results_sweden/Swedenmutualist.txt',pu_tot)
+np.savetxt('results_sweden/Swedenprey.txt',pv_tot)
+np.savetxt('results_sweden/Swedenpred.txt',pw_tot)
+np.savetxt('results_sweden/Swedentime.txt',time)
+
+
