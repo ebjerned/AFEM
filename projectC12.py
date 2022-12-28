@@ -101,6 +101,7 @@ while t <= T:
 plt.plot(pu_tot)
 plt.plot(pv_tot)
 plt.plot(pw_tot)
+plt.legend(["Mutualist", "Prey", "Predator"])
 plt.title("Population over time")
 plt.xlabel("Time")
 plt.ylabel("Population")
