@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-up = np.loadtxt("/results_C12/C12mutualist.txt")
+up = np.loadtxt("results_C12/C12mutualist.txt")
 vp = np.loadtxt("results_C12/C12prey.txt")
 wp = np.loadtxt("results_C12/C12pred.txt")
 
