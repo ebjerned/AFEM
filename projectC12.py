@@ -52,7 +52,7 @@ L2 = dt * ((-beta * u0[1] * u0[1] - u0[2] * u0[1] / (alpha + u0[1] + m * u0[0]))
 L3 = dt * ( zeta * u0[1] * u0[2] / (alpha + u0[1] + m * u0[0])) * q[2] * dx + u0[2] * q[2] * dx
 
 
-out_file = File("results_C12/Csolution.pvd")
+out_file = File("results_C12/C12solution.pvd")
 
 u = Function(W)
 u.assign(u0)
