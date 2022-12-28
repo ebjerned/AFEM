@@ -76,7 +76,7 @@ pu_tot = []
 pv_tot = []
 pw_tot = []
 
-saving_times = range(0,1200,50) #[0, 50, 100, 600, 1200]
+saving_times = range(0,1250,50) #[0, 50, 100, 600, 1200]
 
 time = []
 while t <= T:

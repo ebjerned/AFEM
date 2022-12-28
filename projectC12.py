@@ -9,7 +9,7 @@ element = MixedElement([P1, P1, P1])
 W = FunctionSpace(mesh, element)
 
 t = 0
-T = 2000
+T = 1000
 dt = 0.5
 delta1 = 1
 delta2 = 1
