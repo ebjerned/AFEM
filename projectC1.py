@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from dolfin import * 
-from fenics import *
+from fenics import * 
+import numpy as np
 mesh = Mesh("meshes/circle.xml.gz")
 P1 = FiniteElement("Lagrange", mesh.ufl_cell(), 1)
 element = MixedElement([P1, P1, P1])
@@ -102,6 +103,10 @@ while t <= T:
 plt.plot(pu_tot)
 plt.plot(pv_tot)
 plt.plot(pw_tot)
+plt.legend(["Mutualist", "Prey", "Predator"])
+plt.title("Population over time")
+plt.xlabel("Time")
+plt.ylabel("Population")
 plt.savefig("results_C1/p_tot.png")	
 
 plt.clf()
@@ -111,12 +116,10 @@ plt.xlabel("Preys")
 plt.ylabel("Predators")
 plt.savefig("results_C1/vwphase.png")
 
-#plt.clf()
-#plt.plot3D(pu_tot, pv_tot, pw_tot) 
-#plt.title("Phase diagram for all populations")
-#plt.xlabel("Mutualist")
-#plt.ylabel("Preys")
-#plt.zlabel("Predators")
-#plt.savefig("results_C1/uvwphase.png")
+np.savetxt('results_C12/C12mutualist.txt',pu_tot)
+np.savetxt('results_C12/C12prey.txt',pv_tot)
+np.savetxt('results_C12/C12pred.txt',pw_tot)
+np.savetxt('results_C12/C12time.txt',time)
+
 
 
