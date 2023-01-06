@@ -116,10 +116,10 @@ plt.xlabel("Preys")
 plt.ylabel("Predators")
 plt.savefig("results_C1/vwphase.png")
 
-np.savetxt('results_C12/C12mutualist.txt',pu_tot)
-np.savetxt('results_C12/C12prey.txt',pv_tot)
-np.savetxt('results_C12/C12pred.txt',pw_tot)
-np.savetxt('results_C12/C12time.txt',time)
+np.savetxt('results_C1/C1mutualist.txt',pu_tot)
+np.savetxt('results_C1/C1prey.txt',pv_tot)
+np.savetxt('results_C1/C1pred.txt',pw_tot)
+np.savetxt('results_C1/C1time.txt',time)
 
 
 
