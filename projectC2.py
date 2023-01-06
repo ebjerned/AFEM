@@ -101,14 +101,26 @@ while t <= T:
 		
 	t += dt
 
-plt.plot(pu_tot)
-plt.plot(pv_tot)
-plt.plot(pw_tot)
+plt.plot(time, pu_tot)
+plt.plot(time, pv_tot)
+plt.plot(time, pw_tot)
 plt.legend(["Mutualist", "Prey", "Predator"])
 plt.title("Population over time")
 plt.xlabel("Time")
 plt.ylabel("Population")
 plt.savefig("results_sweden/p_tot.png")	
+
+plt.clf()
+plt.plot(time, pu_tot)
+plt.plot(time, pv_tot)
+plt.plot(time, pw_tot)
+ax = plt.gca()
+ax.set_xlim([0, 200])
+plt.legend(["Mutualist", "Prey", "Predator"])
+plt.title("Population over time")
+plt.xlabel("Time")
+plt.ylabel("Population")
+plt.savefig("results_sweden/p_tot_zoomed.png")
 
 plt.clf()
 plt.plot(pv_tot, pw_tot, linewidth=0.2)
