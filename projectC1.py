@@ -80,7 +80,6 @@ saving_times = [0, 100, 200, 300, 400, 500, 1000]
 
 while t <= T:
 	time.append(t)
-	#u_temp = 0.5*(u0 + u)
 	u0.assign(u)	
 	solve(a==L,u)
 

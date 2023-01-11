@@ -43,13 +43,13 @@ u0 = interpolate(indata,W)
 
 
 
-a1 = (1 - dt*alpha) * u[0] * q[0] * dx + dt * delta1 * inner(grad(u[0]), grad(q[0])) * dx 
-a2 = (1 - dt*beta)  * u[1] * q[1] * dx + dt * delta2 * inner(grad(u[1]), grad(q[1])) * dx
-a3 = (1 + dt*gamma) * u[2] * q[2] * dx + dt * delta3 * inner(grad(u[2]), grad(q[2])) * dx
+a1 = (1 - 0.5*dt*alpha) * u[0] * q[0] * dx + 0.5*dt * delta1 * inner(grad(u[0]), grad(q[0])) * dx 
+a2 = (1 - 0.5*dt*beta)  * u[1] * q[1] * dx + 0.5*dt * delta2 * inner(grad(u[1]), grad(q[1])) * dx
+a3 = (1 + 0.5*dt*gamma) * u[2] * q[2] * dx + 0.5*dt * delta3 * inner(grad(u[2]), grad(q[2])) * dx
 
-L1 = - dt * alpha * u0[0] * u0[0] / (L_0 + l * u0[1]) * q[0] * dx + u0[0] * q[0] * dx
-L2 = dt * ((-beta * u0[1] * u0[1] - u0[2] * u0[1] / (alpha + u0[1] + m * u0[0]))) * q[1] * dx + u0[1] * q[1] * dx
-L3 = dt * ( zeta * u0[1] * u0[2] / (alpha + u0[1] + m * u0[0])) * q[2] * dx + u0[2] * q[2] * dx
+L1 = - dt * alpha * u0[0] * u0[0] / (L_0 + l * u0[1]) * q[0] * dx + (1 + 0.5 * dt * alpha) * u0[0] * q[0] * dx - 0.5 * delta1 * dt * inner(grad(u0[0]), grad(q[0])) * dx
+L2 = - dt * ((beta * u0[1] * u0[1] + u0[2] * u0[1] / (alpha + u0[1] + m * u0[0]))) * q[1] * dx + (1 + 0.5 * dt * beta)*u0[1] * q[1] * dx - 0.5 * delta2 * dt * inner(grad(u0[1]), grad(q[1])) * dx
+L3 = dt * ( zeta * u0[1] * u0[2] / (alpha + u0[1] + m * u0[0])) * q[2] * dx + (1 - 0.5 * gamma * dt) * u0[2] * q[2] * dx - 0.5 * delta3 * dt * inner(grad(u0[2]), grad(q[2])) * dx
 
 
 out_file = File("results_C12/C12solution.pvd")
@@ -78,8 +78,7 @@ saving_times = range(0, 2000, 50) #[0, 100, 200, 300, 400, 500, 1000]
 
 while t <= T:
 	time.append(t)
-	u_temp = 0.5*(u0 + u)
-	u0.assign(u_temp)	
+	u0.assign(u)	
 	solve(a==L,u)
 
 		
