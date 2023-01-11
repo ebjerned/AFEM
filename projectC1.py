@@ -49,7 +49,7 @@ a3 = (1 + 0.5*dt*gamma) * u[2] * q[2] * dx + 0.5*dt * delta3 * inner(grad(u[2]),
 
 L1 = - dt * alpha * u0[0] * u0[0] / (L_0 + l * u0[1]) * q[0] * dx + (1 + 0.5 * dt * alpha) * u0[0] * q[0] * dx - 0.5 * delta1 * dt * inner(grad(u0[0]), grad(q[0])) * dx
 L2 = - dt * ((beta * u0[1] * u0[1] + u0[2] * u0[1] / (alpha + u0[1] + m * u0[0]))) * q[1] * dx + (1 + 0.5 * dt * beta)*u0[1] * q[1] * dx - 0.5 * delta2 * dt * inner(grad(u0[1]), grad(q[1])) * dx
-L3 = dt * ( zeta * u0[1] * u0[2] / (alpha + u0[1] + m * u0[0])) * q[2] * dx + (1 + 0.5 * gamma * dt) * u0[2] * q[2] * dx - 0.5 * delta3 * dt * inner(grad(u0[2]), grad(q[2])) * dx
+L3 = dt * ( zeta * u0[1] * u0[2] / (alpha + u0[1] + m * u0[0])) * q[2] * dx + (1 - 0.5 * gamma * dt) * u0[2] * q[2] * dx - 0.5 * delta3 * dt * inner(grad(u0[2]), grad(q[2])) * dx
 
 
 out_file = File("results_C1/C1solution.pvd")
