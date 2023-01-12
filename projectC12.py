@@ -77,11 +77,7 @@ time = []
 saving_times = range(0, 2000, 50) #[0, 100, 200, 300, 400, 500, 1000]
 
 while t <= T:
-	time.append(t)
-	u0.assign(u)	
-	solve(a==L,u)
 
-		
 	pop_u = assemble(M0)
 	pop_v = assemble(M1)
 	pop_w = assemble(M2)
@@ -94,7 +90,11 @@ while t <= T:
 	if t in saving_times:
 		out_file << (u,t)
 		print("Saved snapshot")
-	
+  
+	time.append(t)
+	u0.assign(u)	
+	solve(a==L,u)
+
 	t += dt
 
 plt.plot(time, pu_tot)

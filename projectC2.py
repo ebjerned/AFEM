@@ -81,10 +81,7 @@ saving_times = range(0,1250,50) #[0, 50, 100, 600, 1200]
 
 time = []
 while t <= T:
-	time.append(t)
-	u0.assign(u)	
-
-	solve(a==L,u)
+	
 
 	pop_u = assemble(M0)
 	pop_v = assemble(M1)
@@ -97,6 +94,10 @@ while t <= T:
 	if t in saving_times:
 		out_file << (u,t)
 		print("Saved snapshot")
+	time.append(t)
+	u0.assign(u)	
+
+	solve(a==L,u)
 		
 	t += dt
 
